@@ -17,7 +17,7 @@
   "author": "Ritik Chaurasiya",
   "type": "module",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html --no-cache",
     "install": "parcel build src/index.html",
     "test": "jest"
   },
@@ -28,6 +28,7 @@
     "@tailwindcss/postcss": "^4.3.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-router-dom": "^6.30.3",
     "tailwindcss": "^4.3.0"
   },
   "browserslist": [
