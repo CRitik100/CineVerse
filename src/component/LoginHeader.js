@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { NETFLIX_LOGO_URL, LOGIN_BACKGROUND_URL } from "../utils/constant";
+import { LOGIN_BACKGROUND_URL, NETFLIX_LOGO_URL } from "../utils/constant";
+import NetflixLogo from "./NetflixLogo";
 
 const LoginHeader = () => {
   return (
@@ -9,7 +10,7 @@ const LoginHeader = () => {
         className="absolute left-15 w-60 bg-linear-to-b from-black"
       >
         <Link to={"/"}>
-          <img src={NETFLIX_LOGO_URL} alt="Netflix logo" />
+          <NetflixLogo />
         </Link>
       </div>
       <div id="login-background">
