@@ -58,7 +58,6 @@ const LoginForm = () => {
                 dispatch(
                   addUser({ uid: uid, email: email, displayName: displayName }),
                 );
-                navigate("/browse");
               })
               .catch((error) => {
                 console.log(error);
@@ -83,7 +82,6 @@ const LoginForm = () => {
             // Signed in
             const user = userCredential.user;
             console.log(user);
-            navigate("/browse");
             // ...
           })
           .catch((error) => {
