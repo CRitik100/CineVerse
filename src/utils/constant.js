@@ -4,3 +4,11 @@ export const LOGIN_BACKGROUND_URL =
   "https://assets.nflxext.com/ffe/siteui/vlv3/0678422e-413e-45a0-a15e-0c43dfc84d16/web/IN-en-20260518-TRIFECTA-perspective_c1eee1e6-7401-4cf4-aa06-297deee84dc2_large.jpg";
 export const USER_PROFILE_LOGO_URL =
   "https://occ-0-8974-2186.1.nflxso.net/dnm/api/v6/SO2HoVCx33X8phZh2pZZmQ4QgNY/AAAABS8sWFjSyj1zyfgcnGamqyJ1E2ZubZGo8dndCM_ipf_5UpmVlkuf8IXzQlmPZQqTMWNjWukESRdLkFGHnf7zbY3MJCO3r4s.png?r=229";
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzM2JmOGQ0ZDk4NzZmOTE3M2M3MGQ2ZjdkNTUxMDU3YSIsIm5iZiI6MTc4MDIwMDUxNi4wNDcwMDAyLCJzdWIiOiI2YTFiYjQ0NDNmZThlOGJhNmI1MmJkZjAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ewqT2YC0QAEtCLVngHC827X6-J72Dv5gnZh9mr0i9Wg",
+  },
+};

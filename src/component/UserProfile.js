@@ -18,7 +18,7 @@ const UserProfile = () => {
   return (
     <div className="bg-black text-white p-4 rounded">
       <ul>
-        <li className="mb-2 cursor-pointer hover:underline">
+        <li className="mb-2 cursor-pointer">
           <div className="flex items-center gap-2">
             <img
               src={USER_PROFILE_LOGO_URL}

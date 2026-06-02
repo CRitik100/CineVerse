@@ -1,0 +1,20 @@
+import { useSelector } from "react-redux";
+import PrimaryInfo from "./PrimaryInfo";
+import PrimaryVideo from "./PrimaryVideo";
+
+const PrimaryContainer = () => {
+  const movies = useSelector((store) => store.movies.nowPlaying);
+  if (!movies) return;
+  const mainMovie = movies[6];
+  const { id, title, overview } = mainMovie;
+  console.log(mainMovie);
+
+  return (
+    <div>
+      <PrimaryInfo title={title} overview={overview} />
+      <PrimaryVideo movieId={id} />
+    </div>
+  );
+};
+
+export default PrimaryContainer;
