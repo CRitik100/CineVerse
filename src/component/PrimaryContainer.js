@@ -5,12 +5,11 @@ import PrimaryVideo from "./PrimaryVideo";
 const PrimaryContainer = () => {
   const movies = useSelector((store) => store.movies.nowPlaying);
   if (!movies) return;
-  const mainMovie = movies[6];
+  const mainMovie = movies[0];
   const { id, title, overview } = mainMovie;
-  console.log(mainMovie);
 
   return (
-    <div>
+    <div className="relative w-full aspect-video">
       <PrimaryInfo title={title} overview={overview} />
       <PrimaryVideo movieId={id} />
     </div>

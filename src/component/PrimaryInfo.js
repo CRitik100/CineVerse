@@ -4,7 +4,7 @@ const PrimaryInfo = (props) => {
   const { title, overview } = props;
   return (
     <div className="w-full aspect-video p-11 text-white bg-gradient-to-r from-black absolute top-0">
-      <div className="mt-70 flex flex-col gap-5">
+      <div className="mt-50 flex flex-col gap-5">
         <h1 className="text-6xl font-bold w-1/3">{title}</h1>
         <p className="text-lg w-1/3">{overview}</p>
         <div className="flex gap-4 font-medium">
