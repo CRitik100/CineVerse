@@ -3,6 +3,7 @@ import Login from "./Login";
 import LoginBody from "./LoginBody";
 import LoginForm from "./LoginForm";
 import Browse from "./Browse";
+import Account from "./Account";
 
 import Error from "./Error";
 
@@ -25,6 +26,10 @@ const Main = () => {
     {
       path: "/browse",
       element: <Browse />,
+    },
+    {
+      path: "/account",
+      element: <Account />,
     },
     {
       path: "/error",

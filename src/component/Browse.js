@@ -6,20 +6,42 @@ import SecondryContainer from "./SecondryContainer";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRated from "../hooks/useTopRated";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import Footer from "./Footer";
+import GPTSearch from "./GPTSearch";
+import { useEffect, useState } from "react";
 
 const Browse = () => {
   const nowPlaying = useSelector((store) => store.movies.nowPlaying);
+  const [showGPT, setShowGPT] = useState(false);
+
+  const handleGPTWindow = () => {
+    setShowGPT(!showGPT);
+  };
 
   useNowPlayingMovies();
   usePopularMovies();
   useTopRated();
   useUpcomingMovies();
 
+  useEffect(() => {
+    if (showGPT) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showGPT]);
+
   return (
     <div className="relative">
-      <LoggedInHeader />
+      <LoggedInHeader gptWindow={handleGPTWindow} />
       <PrimaryContainer />
       <SecondryContainer />
+      <Footer />
+      {showGPT && <GPTSearch />}
     </div>
   );
 };
