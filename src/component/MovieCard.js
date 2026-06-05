@@ -7,7 +7,7 @@ const MovieCard = (props) => {
       <div id="poster" className="">
         <img
           src={`${POSTER_BASE_URL}${movie.poster_path}`}
-          className="w-40 rounded-lg hover:scale-200 hover:z-100 hover:delay-700 transition-transform duration-300"
+          className="w-40 rounded-lg hover:scale-200 hover:z-100 hover:delay-700 origin-left transition-transform duration-300"
         ></img>
       </div>
     </div>

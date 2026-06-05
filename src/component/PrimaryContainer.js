@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import PrimaryInfo from "./PrimaryInfo";
 import PrimaryVideo from "./PrimaryVideo";
+import React from "react";
 
-const PrimaryContainer = () => {
+const PrimaryContainer = React.memo(() => {
   const movies = useSelector((store) => store.movies.nowPlaying);
   if (!movies) return;
-  const mainMovie = movies[0];
+  const i = Math.floor(Math.random() * movies.length);
+  const mainMovie = movies[i];
   const { id, title, overview } = mainMovie;
 
   return (
@@ -14,6 +16,6 @@ const PrimaryContainer = () => {
       <PrimaryVideo movieId={id} />
     </div>
   );
-};
+});
 
 export default PrimaryContainer;
