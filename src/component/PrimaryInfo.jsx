@@ -1,5 +1,3 @@
-import { PLAY_ICON_SVG } from "../utils/constant";
-
 const PrimaryInfo = (props) => {
   const { title, overview } = props;
   return (
