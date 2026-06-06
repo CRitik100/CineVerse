@@ -43,6 +43,9 @@ This is Repository for Netflix.
     npm install react-redux
 
 11. Installing the openai/gemini sdk
+    - npm install @google/genai for gemini
+    - npm install openai for  gpt
+    
 
 Note:
 
