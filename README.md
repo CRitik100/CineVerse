@@ -42,6 +42,8 @@ This is Repository for Netflix.
     npm install @reduxjs/toolkit
     npm install react-redux
 
+11. Installing the openai/gemini sdk
+
 Note:
 
 1. node_modules contain all the installed packages.
