@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import LoggedInHeader from "./LoggedInHeader";
 import PrimaryContainer from "./PrimaryContainer";
@@ -9,10 +9,12 @@ import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import Footer from "./Footer";
 import GPTSearch from "./GPTSearch";
 import { useEffect, useState } from "react";
+import { resetSearchedMovies } from "../utils/moviesSlice";
 
 const Browse = () => {
   const nowPlaying = useSelector((store) => store.movies.nowPlaying);
   const [showGPT, setShowGPT] = useState(false);
+  const dispatch = useDispatch();
 
   const handleGPTWindow = () => {
     setShowGPT(!showGPT);
@@ -28,6 +30,7 @@ const Browse = () => {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
+      dispatch(resetSearchedMovies());
     }
 
     return () => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NetflixLogo from "./NetflixLogo";
 import { USER_PROFILE_LOGO_URL } from "../utils/constant";
 import UserProfile from "./UserProfile";
