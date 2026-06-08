@@ -18,7 +18,7 @@ const UserProfile = () => {
       });
   };
   return (
-    <div className="bg-black text-white p-4 rounded">
+    <div className="bg-black text-white p-4 rounded relative z-50">
       <ul>
         <li className="mb-3 cursor-pointer">
           <div className="flex items-center gap-2">

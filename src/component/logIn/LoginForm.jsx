@@ -93,7 +93,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white p-10 bg-black opacity-70 rounded-2xl flex flex-col justify-center items-center gap-3 transition-transform duration-500">
+    <div className="absolute left-1/2 top-[40%] md:top-1/2 -translate-x-1/2 -translate-y-1/2 text-white p-10 bg-black opacity-70 rounded-2xl flex flex-col justify-center items-center gap-3 transition-transform duration-500">
       <span className="text-xl font-semibold">
         Enter your info to {signInStatus ? "Sign in" : "Sign up"}
       </span>

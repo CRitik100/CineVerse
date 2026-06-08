@@ -29,17 +29,17 @@ const Browse = () => {
     if (showAI) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
-      dispatch(resetSearchedMovies());
+      document.body.style.removeProperty("overflow");
+      // dispatch(resetSearchedMovies());
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.removeProperty("overflow");
     };
   }, [showAI]);
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-col">
       <LoggedInHeader AIWindow={handleAIWindow} />
       <PrimaryContainer />
       <SecondryContainer />

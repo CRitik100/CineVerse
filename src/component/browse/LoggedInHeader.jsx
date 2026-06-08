@@ -8,7 +8,7 @@ const LoggedInHeader = ({ AIWindow }) => {
   const [showProfile, setShowProfile] = useState(false);
 
   return (
-    <div className="flex justify-between items-start py-4 pr-4 pl-8 absolute w-full z-10 box-border">
+    <div className="flex justify-between items-start py-4 pr-4 pl-8 absolute w-full z-60 box-border">
       <div id="loggedin-logo" className=" w-35 ">
         <NetflixLogo />
       </div>
@@ -24,6 +24,7 @@ const LoggedInHeader = ({ AIWindow }) => {
         <div
           id="user-profile"
           className=" flex flex-col justify-center items-end gap-1 cursor-pointer mr-3 relative"
+          onClick={() => setShowProfile(!showProfile)}
           onMouseEnter={() => setShowProfile(true)}
           onMouseLeave={() => setShowProfile(false)}
         >
