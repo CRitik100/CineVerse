@@ -7,7 +7,7 @@ const LoginHeader = () => {
     <div>
       <div
         id="login-logo"
-        className="absolute left-15 w-60 bg-gradient-to-b from-black"
+        className="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-15 w-60 bg-linear-to-b from-black"
       >
         <Link to={"/"}>
           <NetflixLogo />

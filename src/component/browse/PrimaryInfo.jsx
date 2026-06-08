@@ -1,12 +1,12 @@
 const PrimaryInfo = (props) => {
   const { title, overview } = props;
   return (
-    <div className="w-full aspect-video p-11 text-white bg-gradient-to-r from-black absolute top-0">
-      <div className="mt-50 flex flex-col gap-5">
-        <h1 className="text-6xl font-bold w-1/3">{title}</h1>
-        <p className="text-lg w-1/3">{overview}</p>
+    <div className="w-full aspect-video p-11 text-white bg-linear-to-r from-black absolute top-0 flex items-end md:items-center">
+      <div className="flex flex-col gap-5">
+        <h1 className="text-lg md:text-4xl font-bold md:w-1/2">{title}</h1>
+        <p className="text-lg w-1/2 hidden md:block">{overview}</p>
         <div className="flex gap-4 font-medium">
-          <button className="bg-white rounded px-7 py-3 flex gap-2 hover:bg-gray-300 text-black">
+          <button className="bg-white rounded p-2 md:px-7 md:py-3 flex gap-2 hover:bg-gray-300 text-black">
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -25,7 +25,7 @@ const PrimaryInfo = (props) => {
             </svg>
             Play
           </button>
-          <button className="bg-gray-700 rounded px-7 py-3 flex gap-2 opacity-50 hover:opacity-75">
+          <button className="bg-gray-700 rounded p-2 md:px-7 md:py-3 flex gap-2 opacity-50 hover:opacity-75">
             <svg
               viewBox="0 0 24 24"
               width="24"

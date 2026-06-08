@@ -1,7 +1,9 @@
-const Footer = () =>{
-    return <div className="text-white p-11 bg-black">
-        This is footer.
+const Footer = () => {
+  return (
+    <div className="bg-black text-white text-lg relative z-50 p-11">
+      <div className="">This is footer.</div>
     </div>
-}
+  );
+};
 
 export default Footer;

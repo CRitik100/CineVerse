@@ -41,13 +41,13 @@ const AISearch = () => {
   };
 
   return (
-    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[85%] bg-gradient-to-b from-[#141414] to-[#000] rounded-3xl text-white z-50 opacity-100">
-      <div className="flex flex-col justify-around items-center h-full gap-7 pb-25">
-        <div className="bg-gray-800 rounded-3xl w-120 text-white p-2 flex flex-col mt-25">
+    <div className="fixed inset-0 mx-auto my-21 md:m-auto w-[90%] h-[67%] md:w-[75%] md:h-[80%] bg-linear-to-b from-[#1a1a2e] to-[#0f0f0f] rounded-3xl text-white z-50 opacity-100">
+      <div className="flex flex-col justify-start items-center h-full gap-7 py-25 ">
+        <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%]">
           <div className="flex justify-center items-center gap-3">
             <textarea
               id="aiSearchbar"
-              className="w-100 resize-none outline-none overflow-hidden"
+              className="w-full resize-none outline-none overflow-hidden"
               placeholder="What are you thinking...?"
               rows={1}
               ref={textAreaRef}
