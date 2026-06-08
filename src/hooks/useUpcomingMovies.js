@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constant";
-import { addUpcoming } from "../utils/moviesSlice";
+import { addUpcoming } from "../utils/redux/moviesSlice";
 import { useEffect } from "react";
 
 const useUpcomingMovies = () => {
@@ -19,7 +19,7 @@ const useUpcomingMovies = () => {
 
   useEffect(() => {
     !upcomingMovies && fetchData();
-  },[]);
+  }, []);
 };
 
 export default useUpcomingMovies;

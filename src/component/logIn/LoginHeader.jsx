@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LOGIN_BACKGROUND_URL, NETFLIX_LOGO_URL } from "../utils/constant";
+import { LOGIN_BACKGROUND_URL, NETFLIX_LOGO_URL } from "../../utils/constant";
 import NetflixLogo from "./NetflixLogo";
 
 const LoginHeader = () => {

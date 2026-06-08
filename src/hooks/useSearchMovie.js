@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../utils/constant";
 import { useDispatch } from "react-redux";
-import { addSearchedMoviesData } from "../utils/moviesSlice";
+import { addSearchedMoviesData } from "../utils/redux/moviesSlice";
 
 const useSearchMovie = (movies) => {
   const dispatch = useDispatch();
@@ -22,6 +22,6 @@ const useSearchMovie = (movies) => {
       dispatch(addSearchedMoviesData(results));
     };
     fetchAll();
-  },[movies]);
+  }, [movies]);
 };
 export default useSearchMovie;

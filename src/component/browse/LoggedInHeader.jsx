@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import NetflixLogo from "./NetflixLogo";
-import { USER_PROFILE_LOGO_URL } from "../utils/constant";
+import NetflixLogo from "../logIn/NetflixLogo";
+import { USER_PROFILE_LOGO_URL } from "../../utils/constant";
 import UserProfile from "./UserProfile";
-import SearchIcon from "../icons/SearchIcon";
+import SearchIcon from "../../icons/SearchIcon";
 
-const LoggedInHeader = ({ gptWindow }) => {
+const LoggedInHeader = ({ AIWindow }) => {
   const [showProfile, setShowProfile] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ const LoggedInHeader = ({ gptWindow }) => {
         <div
           className="text-white mt-2.5 cursor-pointer"
           onClick={() => {
-            gptWindow();
+            AIWindow();
           }}
         >
           <SearchIcon />

@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import ArrowLeftIcon from "../icons/ArrowLeftIcon";
-import HomeIcon from "../icons/HomeIcon";
-import CreditCardIcon from "../icons/CreditCardIcon";
-import SecurityIcon from "../icons/SecurityIcon";
-import SettingIcon from "../icons/SettingIcon";
+import ArrowLeftIcon from "../../icons/ArrowLeftIcon";
+import HomeIcon from "../../icons/HomeIcon";
+import CreditCardIcon from "../../icons/CreditCardIcon";
+import SecurityIcon from "../../icons/SecurityIcon";
+import SettingIcon from "../../icons/SettingIcon";
 import { useState } from "react";
 import OverView from "./OverView";
 import Membership from "./Membership";

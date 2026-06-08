@@ -1,23 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import useNowPlayingMovies from "../../hooks/useNowPlayingMovies";
 import LoggedInHeader from "./LoggedInHeader";
 import PrimaryContainer from "./PrimaryContainer";
 import SecondryContainer from "./SecondryContainer";
-import usePopularMovies from "../hooks/usePopularMovies";
-import useTopRated from "../hooks/useTopRated";
-import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import usePopularMovies from "../../hooks/usePopularMovies";
+import useTopRated from "../../hooks/useTopRated";
+import useUpcomingMovies from "../../hooks/useUpcomingMovies";
 import Footer from "./Footer";
-import GPTSearch from "./GPTSearch";
+import AISearch from "../aiSearch/AISearch";
 import { useEffect, useState } from "react";
-import { resetSearchedMovies } from "../utils/moviesSlice";
+import { resetSearchedMovies } from "../../utils/redux/moviesSlice";
 
 const Browse = () => {
   const nowPlaying = useSelector((store) => store.movies.nowPlaying);
-  const [showGPT, setShowGPT] = useState(false);
+  const [showAI, setShowAI] = useState(false);
   const dispatch = useDispatch();
 
-  const handleGPTWindow = () => {
-    setShowGPT(!showGPT);
+  const handleAIWindow = () => {
+    setShowAI(!showAI);
   };
 
   useNowPlayingMovies();
@@ -26,7 +26,7 @@ const Browse = () => {
   useUpcomingMovies();
 
   useEffect(() => {
-    if (showGPT) {
+    if (showAI) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -36,15 +36,15 @@ const Browse = () => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [showGPT]);
+  }, [showAI]);
 
   return (
     <div className="relative">
-      <LoggedInHeader gptWindow={handleGPTWindow} />
+      <LoggedInHeader AIWindow={handleAIWindow} />
       <PrimaryContainer />
       <SecondryContainer />
       <Footer />
-      {showGPT && <GPTSearch />}
+      {showAI && <AISearch />}
     </div>
   );
 };
