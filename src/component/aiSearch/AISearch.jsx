@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import ArrowUpIcon from "../icons/ArrowUpIcon";
-import gemini from "../utils/gemini";
+import ArrowUpIcon from "../../icons/ArrowUpIcon";
+import gemini from "../../utils/ai/gemini";
 import { useDispatch, useSelector } from "react-redux";
-import { addSearchedMovies } from "../utils/moviesSlice";
+import { addSearchedMovies } from "../../utils/redux/moviesSlice";
 import SearchedMovieContainer from "./searchedMovieContainer";
 
-const GPTSearch = () => {
+const AISearch = () => {
   const textAreaRef = useRef(null);
   const dispatch = useDispatch();
   const desiredMovies = useSelector((store) => store.movies.searchedMovies);
@@ -42,8 +42,8 @@ const GPTSearch = () => {
 
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[85%] bg-gradient-to-b from-[#141414] to-[#000] rounded-3xl text-white z-50 opacity-100">
-      <div className="flex flex-col justify-start items-center h-full mt-25 gap-4">
-        <div className="bg-gray-800 rounded-3xl w-120 text-white p-2 flex flex-col">
+      <div className="flex flex-col justify-around items-center h-full gap-7 pb-25">
+        <div className="bg-gray-800 rounded-3xl w-120 text-white p-2 flex flex-col mt-25">
           <div className="flex justify-center items-center gap-3">
             <textarea
               id="aiSearchbar"
@@ -52,6 +52,13 @@ const GPTSearch = () => {
               rows={1}
               ref={textAreaRef}
               onInput={handleAiInputHeight}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  e.target.blur();
+                  handleAiResult();
+                }
+              }}
             ></textarea>
             <button
               className="bg-white rounded-full w-8 h-8 p-1 shrink-0 flex justify-center items-center hover:bg-gray-300"
@@ -67,4 +74,4 @@ const GPTSearch = () => {
   );
 };
 
-export default GPTSearch;
+export default AISearch;

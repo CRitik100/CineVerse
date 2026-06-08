@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { USER_PROFILE_LOGO_URL } from "../utils/constant";
+import { USER_PROFILE_LOGO_URL } from "../../utils/constant";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebase";
-import QuestionMarkIcon from "../icons/QuestionMarkIcon";
-import UserprofileIcon from "../icons/UserProfileIcon";
+import { auth } from "../../utils/firebase";
+import QuestionMarkIcon from "../../icons/QuestionMarkIcon";
+import UserprofileIcon from "../../icons/UserProfileIcon";
 
 const UserProfile = () => {
   const user = useSelector((store) => store.user.userInfo);

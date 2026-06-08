@@ -1,4 +1,4 @@
-import { POSTER_BASE_URL } from "../utils/constant";
+import { POSTER_BASE_URL } from "../../utils/constant";
 
 const MovieCard = (props) => {
   const { movie } = props;

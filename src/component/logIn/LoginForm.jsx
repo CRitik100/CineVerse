@@ -3,15 +3,15 @@ import {
   nameValidation,
   emailValidation,
   passwordValidation,
-} from "../utils/validation";
+} from "../../utils/validation";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { addUser } from "../utils/userSlice";
+import { addUser } from "../../utils/redux/userSlice";
 import { useDispatch } from "react-redux";
 
 const LoginForm = () => {

@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Login";
-import LoginBody from "./LoginBody";
-import LoginForm from "./LoginForm";
-import Browse from "./Browse";
-import Account from "./Account";
+import Login from "./logIn/Login";
+import LoginBody from "./logIn/LoginBody";
+import LoginForm from "./logIn/LoginForm";
+import Browse from "./browse/Browse";
+import Account from "./account/Account";
 
 import Error from "./Error";
 

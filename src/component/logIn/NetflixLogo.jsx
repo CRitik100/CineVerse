@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import { NETFLIX_LOGO_URL } from "../utils/constant";
+import { NETFLIX_LOGO_URL } from "../../utils/constant";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
+import { addUser, removeUser } from "../../utils/redux/userSlice";
 import { useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/firebase";
 
 const NetflixLogo = () => {
   const dispatch = useDispatch();

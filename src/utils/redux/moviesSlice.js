@@ -9,7 +9,7 @@ const moviesSlice = createSlice({
     popular: null,
     topRated: null,
     upcoming: null,
-    searchedMovies: [],
+    searchedMovies: ['The Imitation Game', 'The Theory of Everything', 'A Beautiful Mind', 'Good Will Hunting', 'Hidden Figures'],
     searchedMoviesData: [],
   },
 

@@ -1,5 +1,5 @@
 import AccountBody from "./AccountBody";
-import LoggedInHeader from "./LoggedInHeader";
+import LoggedInHeader from "../browse/LoggedInHeader";
 
 const Account = () => {
   return (
