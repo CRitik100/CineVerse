@@ -11,18 +11,30 @@ import Security from "./Security";
 import Settings from "./Settings";
 import lang from "../../utils/langConstant";
 import { useSelector } from "react-redux";
+import MenuIcon from "../../icons/MenuIcon";
 
 const AccountBody = () => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [activeOption, setActiveOption] = useState("overview");
   const defLang = useSelector((store) => store.appConfig.defaultLanguage);
 
   return (
-    <div className="pt-20">
-      <div className="flex flex-column gap-10 p-11 justify-center items-start bg-white w-[60%] h-160 mx-auto rounded-lg">
-        <div className="w-1/3 ">
+    <div className="relative z-60 md:pt-20">
+      <div className="flex gap-10 p-7 md:p-11 justify-start items-start bg-white md:w-[60%] h-screen md:h-160 mx-auto rounded-lg">
+        <div
+          className=" absolute z-60 top-11 left-11 block md:hidden"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
+          <MenuIcon />
+        </div>
+        <div
+          className={`absolute md:relative w-[60%] h-[90%] p-3 md:w-1/3 md:h-full pt-13 md:pt-0 bg-amber-50 md:bg-white rounded-lg border border-gray-300 ${isMenuOpen ? "block" : "hidden"} md:block`}
+        >
           <div
-            className="mb-11 flex items-center gap-2 cursor-pointer hover:bg-gray-200 rounded p-2"
+            className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 rounded p-2 "
             onClick={() => {
               navigate("/browse");
             }}
@@ -30,7 +42,7 @@ const AccountBody = () => {
             <ArrowLeftIcon />
             <span>{lang[defLang].accountBackButton}</span>
           </div>
-          <ul className="text-gray-500 font-semibold flex flex-col gap-7">
+          <ul className="text-gray-500 font-semibold flex flex-col gap-5">
             <li
               className={`flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded ${activeOption === "overview" ? "bg-gray-200" : ""}`}
               onClick={() => setActiveOption("overview")}
@@ -61,11 +73,13 @@ const AccountBody = () => {
             </li>
           </ul>
         </div>
-        <div className="w-2/3">
-          {activeOption === "overview" && <OverView />}
-          {activeOption === "membership" && <Membership />}
-          {activeOption === "security" && <Security />}
-          {activeOption === "settings" && <Settings />}
+        <div className="w-full m-4 *:md:w-2/3 ">
+          <div className="mt-11 md:mt-0">
+            {activeOption === "overview" && <OverView />}
+            {activeOption === "membership" && <Membership />}
+            {activeOption === "security" && <Security />}
+            {activeOption === "settings" && <Settings />}
+          </div>
         </div>
       </div>
     </div>
