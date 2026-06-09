@@ -1,6 +1,6 @@
-# Netflix_GPT
+# CineVerse
 
-This is Repository for Netflix.
+This is Repository for CineVerse .
 
 # Steps for building the project from scratch.
 
@@ -44,8 +44,7 @@ This is Repository for Netflix.
 
 11. Installing the openai/gemini sdk
     - npm install @google/genai for gemini
-    - npm install openai for  gpt
-    
+    - npm install openai for gpt
 
 Note:
 
@@ -54,7 +53,7 @@ Note:
 3. .parcel_cache is stores intermediate build files to speed up subsequent builds.
 4. index.html file should be at the root level as we are using the vite.
 
-## Features of Netflix GPT
+## Features of CineVerse
 
 - Login Page
   login/signup form

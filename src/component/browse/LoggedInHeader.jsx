@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NetflixLogo from "../logIn/NetflixLogo";
+import CineVerseLogo from "../logIn/CineVerseLogo";
 import { USER_PROFILE_LOGO_URL } from "../../utils/constant";
 import UserProfile from "./UserProfile";
 import SearchIcon from "../../icons/SearchIcon";
@@ -10,7 +10,7 @@ const LoggedInHeader = ({ AIWindow }) => {
   return (
     <div className="flex justify-between items-start py-4 pr-4 pl-8 absolute w-full z-60 box-border">
       <div id="loggedin-logo" className=" w-35 ">
-        <NetflixLogo />
+        <CineVerseLogo />
       </div>
       <div className="flex items-center gap-7">
         <div
