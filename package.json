@@ -1,17 +1,17 @@
 {
-  "name": "netflix_gpt",
+  "name": "CineVerse",
   "version": "1.0.0",
   "description": "Netflix powered with A.I",
   "keywords": [
     "neflix-a.i"
   ],
-  "homepage": "https://github.com/CRitik100/Netflix_GPT#readme",
+  "homepage": "https://github.com/CRitik100/CineVerse#readme",
   "bugs": {
-    "url": "https://github.com/CRitik100/Netflix_GPT/issues"
+    "url": "https://github.com/CRitik100/CineVerse/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CRitik100/Netflix_GPT.git"
+    "url": "git+https://github.com/CRitik100/CineVerse.git"
   },
   "license": "ISC",
   "author": "Ritik Chaurasiya",

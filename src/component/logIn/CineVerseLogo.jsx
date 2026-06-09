@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
-import { NETFLIX_LOGO_URL } from "../../utils/constant";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../../utils/redux/userSlice";
 import { useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../../utils/firebase";
+import CineVerseIcon from "../../icons/CineVerseIcon";
 
-const NetflixLogo = () => {
+const CineVerseLogo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,7 +26,7 @@ const NetflixLogo = () => {
     return () => unsubscribe();
   }, []);
 
-  return <img src={NETFLIX_LOGO_URL} alt="Netflix logo" />;
+  return <CineVerseIcon />;
 };
 
-export default NetflixLogo;
+export default CineVerseLogo;
