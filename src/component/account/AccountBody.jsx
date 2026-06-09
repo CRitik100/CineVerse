@@ -9,10 +9,13 @@ import OverView from "./OverView";
 import Membership from "./Membership";
 import Security from "./Security";
 import Settings from "./Settings";
+import lang from "../../utils/langConstant";
+import { useSelector } from "react-redux";
 
 const AccountBody = () => {
   const navigate = useNavigate();
   const [activeOption, setActiveOption] = useState("overview");
+  const defLang = useSelector((store) => store.appConfig.defaultLanguage);
 
   return (
     <div className="pt-20">
@@ -25,36 +28,36 @@ const AccountBody = () => {
             }}
           >
             <ArrowLeftIcon />
-            <span>Back to Netflix.</span>
+            <span>{lang[defLang].accountBackButton}</span>
           </div>
           <ul className="text-gray-500 font-semibold flex flex-col gap-7">
             <li
-              className="flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded"
+              className={`flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded ${activeOption === "overview" ? "bg-gray-200" : ""}`}
               onClick={() => setActiveOption("overview")}
             >
               <HomeIcon />
-              <span>Overview</span>
+              <span>{lang[defLang].overView}</span>
             </li>
             <li
-              className="flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded"
+              className={`flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded ${activeOption === "membership" ? "bg-gray-200" : ""}`}
               onClick={() => setActiveOption("membership")}
             >
               <CreditCardIcon />
-              <span>Membership</span>
+              <span>{lang[defLang].membership}</span>
             </li>
             <li
-              className="flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded"
+              className={`flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded ${activeOption === "security" ? "bg-gray-200" : ""}`}
               onClick={() => setActiveOption("security")}
             >
               <SecurityIcon />
-              <span>Security</span>
+              <span>{lang[defLang].security}</span>
             </li>
             <li
-              className="flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded"
+              className={`flex gap-2 cursor-pointer p-2 hover:bg-gray-200 rounded ${activeOption === "settings" ? "bg-gray-200" : ""}`}
               onClick={() => setActiveOption("settings")}
             >
               <SettingIcon />
-              <span>Settings</span>
+              <span>{lang[defLang].settings}</span>
             </li>
           </ul>
         </div>
