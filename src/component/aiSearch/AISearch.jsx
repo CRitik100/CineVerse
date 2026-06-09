@@ -4,11 +4,13 @@ import gemini from "../../utils/ai/gemini";
 import { useDispatch, useSelector } from "react-redux";
 import { addSearchedMovies } from "../../utils/redux/moviesSlice";
 import SearchedMovieContainer from "./searchedMovieContainer";
+import lang from "../../utils/langConstant";
 
 const AISearch = () => {
   const textAreaRef = useRef(null);
   const dispatch = useDispatch();
   const desiredMovies = useSelector((store) => store.movies.searchedMovies);
+  const defLang = useSelector((store) => store.appConfig.defaultLanguage);
 
   const handleAiInputHeight = (event) => {
     const textArea = textAreaRef.current;
@@ -48,7 +50,7 @@ const AISearch = () => {
             <textarea
               id="aiSearchbar"
               className="w-full resize-none outline-none overflow-hidden"
-              placeholder="What are you thinking...?"
+              placeholder={lang[defLang].aiSearchPlaceholder}
               rows={1}
               ref={textAreaRef}
               onInput={handleAiInputHeight}

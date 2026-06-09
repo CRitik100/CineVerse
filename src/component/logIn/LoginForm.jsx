@@ -12,7 +12,8 @@ import {
 import { auth } from "../../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../../utils/redux/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import lang from "../../utils/langConstant";
 
 const LoginForm = () => {
   const [signInStatus, setSignInStatus] = useState(true);
@@ -21,6 +22,7 @@ const LoginForm = () => {
   const [errorPassword, setErrorPassword] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const defLang = useSelector((store) => store.appConfig.defaultLanguage);
 
   const name = useRef(null);
   const emailId = useRef(null);
@@ -95,7 +97,8 @@ const LoginForm = () => {
   return (
     <div className="absolute left-1/2 top-[40%] md:top-1/2 -translate-x-1/2 -translate-y-1/2 text-white p-10 bg-black opacity-70 rounded-2xl flex flex-col justify-center items-center gap-3 transition-transform duration-500">
       <span className="text-xl font-semibold">
-        Enter your info to {signInStatus ? "Sign in" : "Sign up"}
+        {lang[defLang].enterInfoTo}{" "}
+        {signInStatus ? lang[defLang].signIn : lang[defLang].signUp}
       </span>
       <form className="w-80 flex flex-col" onSubmit={(e) => e.preventDefault()}>
         <div
@@ -105,7 +108,7 @@ const LoginForm = () => {
             id="userName"
             type="text"
             ref={name}
-            placeholder="Enter your Name"
+            placeholder={lang[defLang].enterYourName}
             className="p-4 rounded bg-gray-900 focus:outline-none focus:ring-3 focus:ring-red-600 w-full text-white placeholder-white/80"
           />
           <span
@@ -118,7 +121,7 @@ const LoginForm = () => {
           id="userId"
           type="text"
           ref={emailId}
-          placeholder="Email or phone number "
+          placeholder={lang[defLang].emailOrPhone}
           className="p-4 rounded bg-gray-900 focus:outline-none focus:ring-3 focus:ring-red-600 w-full text-white placeholder-white/80"
         />
         <span
@@ -130,7 +133,7 @@ const LoginForm = () => {
           id="password"
           type="password"
           ref={password}
-          placeholder="Password"
+          placeholder={lang[defLang].password}
           className="p-4 rounded bg-gray-900 focus:outline-none focus:ring-3 focus:ring-red-600 w-full text-white placeholder-white/80"
         />
         <span
@@ -144,12 +147,14 @@ const LoginForm = () => {
             validationForm();
           }}
         >
-          {signInStatus ? "Sign in" : "Sign up"}
+          {signInStatus ? lang[defLang].signIn : lang[defLang].signUp}
         </button>
       </form>
       <div>
         <span>
-          {signInStatus ? "New to Netflix? " : "Already have the account? "}
+          {signInStatus
+            ? lang[defLang].newToAiFlix
+            : lang[defLang].alreadyHaveAccount}
         </span>
         <span
           className="cursor-pointer text-red-600 font-bold"
@@ -157,9 +162,9 @@ const LoginForm = () => {
             setSignInStatus(!signInStatus);
           }}
         >
-          {signInStatus ? "Sign up" : "Sign in"}
+          {signInStatus ? lang[defLang].signUp : lang[defLang].signIn}
         </span>
-        <span> now.</span>
+        <span> {lang[defLang].now} </span>
       </div>
     </div>
   );

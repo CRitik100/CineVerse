@@ -1,5 +1,10 @@
+import { useSelector } from "react-redux";
+import lang from "../../utils/langConstant";
+
 const PrimaryInfo = (props) => {
   const { title, overview } = props;
+  const defLang = useSelector((store) => store.appConfig.defaultLanguage);
+
   return (
     <div className="w-full aspect-video p-11 text-white bg-linear-to-r from-black absolute top-0 flex items-end md:items-center">
       <div className="flex flex-col gap-5">
@@ -23,7 +28,7 @@ const PrimaryInfo = (props) => {
                 d="M5 2.7a1 1 0 0 1 1.48-.88l16.93 9.3a1 1 0 0 1 0 1.76l-16.93 9.3A1 1 0 0 1 5 21.31z"
               ></path>
             </svg>
-            Play
+            {lang[defLang].play}
           </button>
           <button className="bg-gray-700 rounded p-2 md:px-7 md:py-3 flex gap-2 opacity-50 hover:opacity-75">
             <svg
@@ -44,7 +49,7 @@ const PrimaryInfo = (props) => {
                 clipRule="evenodd"
               ></path>
             </svg>
-            More Info
+            {lang[defLang].moreInfo}
           </button>
         </div>
       </div>

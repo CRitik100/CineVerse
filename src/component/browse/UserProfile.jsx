@@ -5,9 +5,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import QuestionMarkIcon from "../../icons/QuestionMarkIcon";
 import UserprofileIcon from "../../icons/UserProfileIcon";
+import lang from "../../utils/langConstant";
 
 const UserProfile = () => {
   const user = useSelector((store) => store.user.userInfo);
+  const defLang = useSelector((store) => store.appConfig.defaultLanguage);
   const navigate = useNavigate();
   const handleLogout = () => {
     signOut(auth)
@@ -37,16 +39,16 @@ const UserProfile = () => {
               navigate("/account");
             }}
           >
-            Account
+            {lang[defLang].account}
           </span>
         </li>
         <li className="mb-2 cursor-pointer hover:underline flex justify-start items-center gap-2">
           <QuestionMarkIcon />
-          <span>Help Center</span>
+          <span>{lang[defLang].helpCenter}</span>
         </li>
         <hr className="border-t border-gray-600 my-2" />
         <li className="cursor-pointer hover:underline" onClick={handleLogout}>
-          Sign out of Netflix
+          {lang[defLang].signOut}
         </li>
       </ul>
     </div>
