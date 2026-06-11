@@ -9,8 +9,15 @@ const moviesSlice = createSlice({
     popular: null,
     topRated: null,
     upcoming: null,
-    searchedMovies: ['The Imitation Game', 'The Theory of Everything', 'A Beautiful Mind', 'Good Will Hunting', 'Hidden Figures'],
+    searchedMovies: [
+      "The Imitation Game",
+      "The Theory of Everything",
+      "A Beautiful Mind",
+      "Good Will Hunting",
+      "Hidden Figures",
+    ],
     searchedMoviesData: [],
+    favouriteMovies: [],
   },
 
   reducers: {
@@ -38,6 +45,14 @@ const moviesSlice = createSlice({
     addSearchedMoviesData: (state, action) => {
       state.searchedMoviesData = action.payload;
     },
+    addFavouriteMovie: (state, action) => {
+      state.favouriteMovies.push(action.payload);
+    },
+    removeFavouriteMovie: (state, action) => {
+      state.favouriteMovies = state.favouriteMovies.filter(
+        (movie) => movie.id !== action.payload.id,
+      );
+    },
   },
 });
 
@@ -50,6 +65,8 @@ export const {
   addSearchedMovies,
   resetSearchedMovies,
   addSearchedMoviesData,
+  addFavouriteMovie,
+  removeFavouriteMovie,
 } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

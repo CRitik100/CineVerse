@@ -36,7 +36,7 @@ const UserProfile = () => {
           <UserprofileIcon />
           <span
             onClick={() => {
-              navigate("/account");
+              navigate("/browse/account");
             }}
           >
             {lang[defLang].account}

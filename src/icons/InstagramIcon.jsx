@@ -7,7 +7,7 @@ const InstagramIcon = () => {
       data-icon="InstagramMedium"
       data-icon-id=":r4:"
       aria-hidden="true"
-      class="svg-icon svg-icon-instagram-logo"
+      className="svg-icon svg-icon-instagram-logo"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       role="img"

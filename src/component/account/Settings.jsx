@@ -18,12 +18,13 @@ const Settings = () => {
             className="p-2 rounded w-full outline-none focus:ring-2 focus:ring-black bg-gray-200"
             value={defLang}
             onChange={(e) => {
-              console.log("Selected Language: ", e.target.value);
               dispatch(updateDefaultLanguage(e.target.value));
             }}
           >
             {LANGUAGE_OPTIONS.map((lan) => (
-              <option value={lan.code}>{lan.name}</option>
+              <option key={lan.code} value={lan.code}>
+                {lan.name}
+              </option>
             ))}
           </select>
         </div>

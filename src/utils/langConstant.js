@@ -31,6 +31,7 @@ const lang = {
     alreadyHaveAccount: "Already have an account?",
     now: "now.",
     recommendedMovies: "Recommended Movies",
+    favouriteMovies: "Your Favourite Movies",
   },
   hi: {
     aiSearchPlaceholder: "आप क्या सोच रहे हैं...?",
@@ -64,6 +65,7 @@ const lang = {
     alreadyHaveAccount: "क्या आपका पहले से खाता है? ",
     now: "अब।",
     recommendedMovies: "आपके लिए सुझाई गई फ़िल्में",
+    favouriteMovies: "आपकी पसंदीदा फ़िल्में",
   },
   mr: {
     aiSearchPlaceholder: "तुम्ही काय विचार करत आहात...?",
@@ -97,6 +99,7 @@ const lang = {
     alreadyHaveAccount: "तुमचे आधीपासून खाते आहे का? ",
     now: "आता.",
     recommendedMovies: "तुमच्यासाठी सुचवलेले चित्रपट",
+    favouriteMovies: "तुमचे आवडते चित्रपट",
   },
 };
 

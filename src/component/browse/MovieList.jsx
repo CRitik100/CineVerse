@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = (props) => {
-  const { title, movies } = props;
+  const { title, movies, isFavList } = props;
   if (!movies?.length) return null;
 
   return (
@@ -9,7 +9,9 @@ const MovieList = (props) => {
       <h1 id="title" className="text-xl mb-3 font-semibold">
         {title}
       </h1>
-      <div className="flex gap-3 overflow-x-scroll no-scrollbar py-32 -my-32">
+      <div
+        className={`flex gap-3 overflow-x-scroll no-scrollbar py-32 -my-32 ${isFavList ? " md:flex-wrap" : ""}`}
+      >
         {movies.map((movieData) => (
           <MovieCard key={movieData?.id} movie={movieData} />
         ))}
