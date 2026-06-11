@@ -6,6 +6,8 @@ import Browse from "./browse/Browse";
 import Account from "./account/Account";
 
 import Error from "./Error";
+import Home from "./Home";
+import Favourite from "./Favourite/Favourite";
 
 const Main = () => {
   const appRouter = createBrowserRouter([
@@ -25,11 +27,21 @@ const Main = () => {
     },
     {
       path: "/browse",
-      element: <Browse />,
-    },
-    {
-      path: "/account",
-      element: <Account />,
+      element: <Home />,
+      children: [
+        {
+          path: "/browse",
+          element: <Browse />,
+        },
+        {
+          path: "/browse/account",
+          element: <Account />,
+        },
+        {
+          path: "/browse/favourite",
+          element: <Favourite />,
+        },
+      ],
     },
     {
       path: "/error",

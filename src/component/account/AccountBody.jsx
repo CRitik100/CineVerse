@@ -15,7 +15,7 @@ import MenuIcon from "../../icons/MenuIcon";
 
 const AccountBody = () => {
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeOption, setActiveOption] = useState("overview");
   const defLang = useSelector((store) => store.appConfig.defaultLanguage);
 
@@ -23,7 +23,7 @@ const AccountBody = () => {
     <div className="relative z-60 md:pt-20">
       <div className="flex gap-10 p-7 md:p-11 justify-start items-start bg-white md:w-[60%] h-screen md:h-160 mx-auto rounded-lg">
         <div
-          className=" absolute z-60 top-11 left-11 block md:hidden"
+          className=" absolute z-60 top-11 left-11 block md:hidden cursor-pointer"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
           }}
@@ -34,7 +34,7 @@ const AccountBody = () => {
           className={`absolute md:relative w-[60%] h-[90%] p-3 md:w-1/3 md:h-full pt-13 md:pt-0 bg-amber-50 md:bg-white rounded-lg border border-gray-300 ${isMenuOpen ? "block" : "hidden"} md:block`}
         >
           <div
-            className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 rounded p-2 "
+            className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 rounded p-2 md:my-2 "
             onClick={() => {
               navigate("/browse");
             }}

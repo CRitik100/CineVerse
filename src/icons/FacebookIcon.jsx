@@ -7,7 +7,7 @@ const FacebookIcon = () => {
       data-icon="FacebookMedium"
       data-icon-id=":r3:"
       aria-hidden="true"
-      class="svg-icon svg-icon-facebook-logo"
+      className="svg-icon svg-icon-facebook-logo"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       role="img"

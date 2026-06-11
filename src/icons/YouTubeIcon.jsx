@@ -7,7 +7,7 @@ const YouTubeIcon = () => {
       data-icon="YoutubeMedium"
       data-icon-id=":r6:"
       aria-hidden="true"
-      class="svg-icon svg-icon-youtube-logo"
+      className="svg-icon svg-icon-youtube-logo"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       role="img"

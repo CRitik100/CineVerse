@@ -9,7 +9,6 @@ const appConfigSlice = createSlice({
 
   reducers: {
     updateDefaultLanguage: (state, action) => {
-      console.log("Updating default language to: ", action.payload);
       state.defaultLanguage = action.payload;
     },
   },
