@@ -49,7 +49,7 @@ const Main = () => {
       ],
     },
     {
-      path: "/error",
+      path: "*",
       element: <Error />,
     },
   ]);
