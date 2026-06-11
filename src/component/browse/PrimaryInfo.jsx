@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import lang from "../../utils/langConstant";
 import PlayIcon from "../../icons/PlayIcon";
 import InfoIcon from "../../icons/InfoIcon";
+import { useNavigate } from "react-router-dom";
 
 const PrimaryInfo = (props) => {
-  const { title, overview } = props;
+  const { title, overview, movieId } = props;
   const defLang = useSelector((store) => store.appConfig.defaultLanguage);
+  const navigate = useNavigate();
 
   return (
     <div className="w-full aspect-video p-11 text-white bg-linear-to-r from-black absolute top-0 flex items-end md:items-center">
@@ -13,7 +15,10 @@ const PrimaryInfo = (props) => {
         <h1 className="text-lg md:text-4xl font-bold md:w-1/2">{title}</h1>
         <p className="text-lg w-1/2 hidden md:block">{overview}</p>
         <div className="flex gap-4 font-medium">
-          <button className="bg-white rounded p-2 md:px-7 md:py-3 flex gap-2 hover:bg-gray-300 text-black">
+          <button
+            className="bg-white rounded p-2 md:px-7 md:py-3 flex gap-2 hover:bg-gray-300 text-black"
+            onClick={() => navigate(`/browse/movieTrailer/${movieId}`)}
+          >
             <PlayIcon />
             {lang[defLang].play}
           </button>

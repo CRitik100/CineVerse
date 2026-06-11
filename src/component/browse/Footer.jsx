@@ -55,7 +55,7 @@ const Footer = () => {
             <li>Movie Database</li>
             <li>Latest Releases</li>
             <li>Top Rated Movies</li>
-            <li>AI Recommendations</li>
+            <li>A.I</li>
             <li>Watchlist</li>
             <li>Privacy Policy</li>
             <li>Terms of Service</li>

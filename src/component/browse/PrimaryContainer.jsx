@@ -12,7 +12,7 @@ const PrimaryContainer = React.memo(() => {
 
   return (
     <div className="relative w-full aspect-video">
-      <PrimaryInfo title={title} overview={overview} />
+      <PrimaryInfo title={title} overview={overview} movieId={id} />
       <PrimaryVideo movieId={id} />
     </div>
   );
