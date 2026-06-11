@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import useMovieTrailer from "../../hooks/useMovieTrailer";
+import usePrimaryTrailer from "../../hooks/usePrimaryTrailer";
 
 const PrimaryVideo = (props) => {
-  const trailer = useSelector((store) => store.movies?.trailer);
+  const trailer = useSelector((store) => store.movies?.primaryTrailer);
   const { movieId } = props;
 
-  useMovieTrailer(movieId);
+  usePrimaryTrailer(movieId);
 
   return (
     <div className="w-full absolute top-0 left-0 -z-10">

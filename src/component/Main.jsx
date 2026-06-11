@@ -8,6 +8,7 @@ import Account from "./account/Account";
 import Error from "./Error";
 import Home from "./Home";
 import Favourite from "./Favourite/Favourite";
+import MovieTrailer from "./browse/MovieTrailer";
 
 const Main = () => {
   const appRouter = createBrowserRouter([
@@ -40,6 +41,10 @@ const Main = () => {
         {
           path: "/browse/favourite",
           element: <Favourite />,
+        },
+        {
+          path: "/browse/movieTrailer/:id",
+          element: <MovieTrailer />,
         },
       ],
     },

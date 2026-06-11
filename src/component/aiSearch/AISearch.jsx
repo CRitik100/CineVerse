@@ -43,7 +43,7 @@ const AISearch = () => {
   };
 
   return (
-    <div className="fixed inset-0 mx-auto my-21 md:m-auto w-[90%] h-[67%] md:w-[75%] md:h-[80%] bg-linear-to-b from-[#1a1a2e] to-[#0f0f0f] rounded-3xl text-white z-50 opacity-100">
+    <div className="fixed inset-0 mx-auto my-21 md:m-auto w-[90%] h-[90%] md:w-[75%] md:h-[80%] bg-linear-to-b from-[#1a1a2e] to-[#0f0f0f] rounded-3xl text-white z-50 opacity-100">
       <div className="flex flex-col justify-start items-center h-full gap-7 py-25 ">
         <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%]">
           <div className="flex justify-center items-center gap-3">
