@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "netflix-gpt-b46e3"
-  }
+    "default": "cine-verse-d7626"
+  },
+  "targets": {},
+  "etags": {}
 }

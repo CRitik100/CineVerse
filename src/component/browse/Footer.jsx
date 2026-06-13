@@ -7,7 +7,7 @@ import XIcon from "../../icons/XIcon";
 const Footer = () => {
   return (
     <div className="bg-black text-white text-lg relative z-50 p-11 flex justify-center">
-      <div className="flex flex-col gap-5 w-full max-w-4xl">
+      <div className="flex flex-col gap-5 w-full max-w-2xl">
         <div id="socialMediaLink">
           <ul className="flex gap-5">
             <li id="fb">
@@ -50,18 +50,18 @@ const Footer = () => {
         </div>
         <div id="Imp Links">
           <ul className="grid grid-cols-4 gap-y-3 text-gray-400 text-sm">
-            <li>About Cenverse</li>
-            <li>Help Center</li>
-            <li>Movie Database</li>
-            <li>Latest Releases</li>
-            <li>Top Rated Movies</li>
-            <li>A.I</li>
+            <li>About</li>
+            <li>Support</li>
+            <li>Database</li>
+            <li>Releases</li>
+            <li>Trending</li>
+            <li>AI</li>
             <li>Watchlist</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-            <li>Cookie Preferences</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+            <li>Cookies</li>
             <li>Careers</li>
-            <li>Contact Us</li>
+            <li>Contact</li>
           </ul>
         </div>
         <div className="text-xs text-gray-400">

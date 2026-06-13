@@ -3,12 +3,13 @@ import CineVerseLogo from "../logIn/CineVerseLogo";
 import { USER_PROFILE_LOGO_URL } from "../../utils/constant";
 import UserProfile from "./UserProfile";
 import SearchIcon from "../../icons/SearchIcon";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import BookMark from "../../icons/BookMark";
 
 const LoggedInHeader = ({ AIWindow }) => {
   const [showProfile, setShowProfile] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="flex justify-between items-start py-4 pr-4 pl-8 absolute w-full z-60 box-border">
@@ -19,8 +20,11 @@ const LoggedInHeader = ({ AIWindow }) => {
       >
         <CineVerseLogo />
       </div>
-      <div className="flex items-center gap-7">
+      <div
+        className={`flex items-center gap-7 ${location.pathname === "/browse" ? "block" : "hidden"}`}
+      >
         <div
+          id="search"
           className="text-white mt-2.5 cursor-pointer"
           onClick={() => {
             AIWindow();
@@ -29,6 +33,7 @@ const LoggedInHeader = ({ AIWindow }) => {
           <SearchIcon />
         </div>
         <div
+          id="favourite"
           className="text-white mt-3 cursor-pointer"
           onClick={() => navigate("/browse/favourite")}
         >

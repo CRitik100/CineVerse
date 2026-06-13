@@ -95,12 +95,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="absolute left-1/2 top-[40%] md:top-1/2 -translate-x-1/2 -translate-y-1/2 text-white p-10 bg-black opacity-70 rounded-2xl flex flex-col justify-center items-center gap-3 transition-transform duration-500">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white p-10 bg-black opacity-70 rounded-2xl flex flex-col justify-center items-center gap-3 transition-transform duration-500 w-[90%] md:w-[30%]">
       <span className="text-xl font-semibold">
         {lang[defLang].enterInfoTo}{" "}
         {signInStatus ? lang[defLang].signIn : lang[defLang].signUp}
       </span>
-      <form className="w-80 flex flex-col" onSubmit={(e) => e.preventDefault()}>
+      <form className="w-[95%] flex flex-col" onSubmit={(e) => e.preventDefault()}>
         <div
           className={`overflow-hidden transition-all duration-500 mb-4 p-1 ${!signInStatus ? "max-h-20 opacity-100 " : "max-h-0 opacity-0"}`}
         >
