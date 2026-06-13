@@ -32,6 +32,7 @@ const lang = {
     now: "now.",
     recommendedMovies: "Recommended Movies",
     favouriteMovies: "Your Favourite Movies",
+    pleaseWait: "Please wait...",
   },
   hi: {
     aiSearchPlaceholder: "आप क्या सोच रहे हैं...?",
@@ -66,6 +67,7 @@ const lang = {
     now: "अब।",
     recommendedMovies: "आपके लिए सुझाई गई फ़िल्में",
     favouriteMovies: "आपकी पसंदीदा फ़िल्में",
+    pleaseWait: "कृपया प्रतीक्षा करें...",
   },
   mr: {
     aiSearchPlaceholder: "तुम्ही काय विचार करत आहात...?",
@@ -100,6 +102,7 @@ const lang = {
     now: "आता.",
     recommendedMovies: "तुमच्यासाठी सुचवलेले चित्रपट",
     favouriteMovies: "तुमचे आवडते चित्रपट",
+    pleaseWait: "कृपया प्रतीक्षा करा...",
   },
 };
 
