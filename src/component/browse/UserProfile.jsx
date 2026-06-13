@@ -20,9 +20,9 @@ const UserProfile = () => {
       });
   };
   return (
-    <div className="bg-black text-white p-4 rounded relative z-50">
-      <ul>
-        <li className="mb-3 cursor-pointer">
+    <div className="bg-black text-white p-4 rounded-2xl relative z-50 outline-1 hove:outline-gray-600">
+      <ul className="flex flex-col gap-1">
+        <li className="mb-3 mt-1 cursor-pointer">
           <div className="flex items-center gap-2">
             <img
               src={USER_PROFILE_LOGO_URL}

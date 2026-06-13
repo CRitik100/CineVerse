@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addSearchedMovies } from "../../utils/redux/moviesSlice";
 import SearchedMovieContainer from "./searchedMovieContainer";
 import lang from "../../utils/langConstant";
+import CloseIcon from "../../icons/CloseIcon";
 
-const AISearch = () => {
+const AISearch = ({ onClose }) => {
   const textAreaRef = useRef(null);
   const dispatch = useDispatch();
   const desiredMovies = useSelector((store) => store.movies.searchedMovies);
@@ -43,34 +44,45 @@ const AISearch = () => {
   };
 
   return (
-    <div className="fixed inset-0 mx-auto my-21 md:m-auto w-[90%] h-[90%] md:w-[75%] md:h-[80%] bg-linear-to-b from-[#1a1a2e] to-[#0f0f0f] rounded-3xl text-white z-50 opacity-100">
-      <div className="flex flex-col justify-start items-center h-full gap-7 py-25 ">
-        <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%]">
-          <div className="flex justify-center items-center gap-3">
-            <textarea
-              id="aiSearchbar"
-              className="w-full resize-none outline-none overflow-hidden"
-              placeholder={lang[defLang].aiSearchPlaceholder}
-              rows={1}
-              ref={textAreaRef}
-              onInput={handleAiInputHeight}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  e.target.blur();
-                  handleAiResult();
-                }
-              }}
-            ></textarea>
-            <button
-              className="bg-white rounded-full w-8 h-8 p-1 shrink-0 flex justify-center items-center hover:bg-gray-300"
-              onClick={handleAiResult}
-            >
-              <ArrowUpIcon />
-            </button>
+    <div>
+      <div className="absolute inset-0 z-60 bg-black/50"></div>
+      <div className="fixed inset-0 mx-auto my-21 md:m-auto w-[90%] h-[80dvh] md:w-[75%] bg-linear-to-b from-[#1a1a2e] to-[#0f0f0f] rounded-3xl text-white z-130 opacity-100 flex justify-around items-center">
+        <button
+          className="absolute top-4 right-4 cursor-pointer text-gray-800 hover:text-gray-700"
+          onClick={() => {
+            onClose();
+          }}
+        >
+          <CloseIcon />
+        </button>
+        <div className="flex flex-col justify-start items-center gap-7 ">
+          <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%]">
+            <div className="flex justify-center items-center gap-3">
+              <textarea
+                id="aiSearchbar"
+                className="w-full resize-none outline-none overflow-hidden"
+                placeholder={lang[defLang].aiSearchPlaceholder}
+                rows={1}
+                ref={textAreaRef}
+                onInput={handleAiInputHeight}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    e.target.blur();
+                    handleAiResult();
+                  }
+                }}
+              ></textarea>
+              <button
+                className="bg-white rounded-full w-8 h-8 p-1 shrink-0 flex justify-center items-center hover:bg-gray-300"
+                onClick={handleAiResult}
+              >
+                <ArrowUpIcon />
+              </button>
+            </div>
           </div>
+          {desiredMovies.length > 0 && <SearchedMovieContainer />}
         </div>
-        {desiredMovies.length > 0 && <SearchedMovieContainer />}
       </div>
     </div>
   );

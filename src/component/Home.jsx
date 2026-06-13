@@ -27,10 +27,10 @@ const Home = () => {
   }, [showAI]);
 
   return (
-    <div>
+    <div className="relative h-dvh w-full">
       <LoggedInHeader AIWindow={handleAIWindow} />
       <Outlet />
-      {showAI && <AISearch />}
+      {showAI && <AISearch onClose={handleAIWindow} />}
     </div>
   );
 };

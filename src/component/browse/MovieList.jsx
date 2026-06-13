@@ -10,7 +10,7 @@ const MovieList = (props) => {
         {title}
       </h1>
       <div
-        className={`flex gap-3 overflow-x-scroll no-scrollbar py-32 -my-32 ${isFavList ? " md:flex-wrap pr-32 -mr-32" : ""}`}
+        className={`flex gap-3 overflow-x-scroll no-scrollbar md:py-32 md:-my-32 ${isFavList ? " md:flex-wrap pr-32 -mr-32" : ""}`}
       >
         {movies.map((movieData) => (
           <MovieCard key={movieData?.id} movie={movieData} />
