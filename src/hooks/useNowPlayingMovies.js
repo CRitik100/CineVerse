@@ -3,7 +3,7 @@ import { API_OPTIONS } from "../utils/constant";
 import { addNowPlayingMovies } from "../utils/redux/moviesSlice";
 import { useEffect } from "react";
 
-const useNowPlayingMovies = () => {
+const  useNowPlayingMovies = () => {
   //Fetch now playing movies and store in redux store.
   const dispatch = useDispatch();
   const nowPlayingMovies = useSelector((store) => store.movies.nowPlaying);

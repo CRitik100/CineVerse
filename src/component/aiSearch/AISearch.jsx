@@ -2,7 +2,10 @@ import { useRef, useState } from "react";
 import ArrowUpIcon from "../../icons/ArrowUpIcon";
 import gemini from "../../utils/ai/gemini";
 import { useDispatch, useSelector } from "react-redux";
-import { addSearchedMovies } from "../../utils/redux/moviesSlice";
+import {
+  addSearchedMovies,
+  addSearchedMoviesData,
+} from "../../utils/redux/moviesSlice";
 import SearchedMovieContainer from "./searchedMovieContainer";
 import lang from "../../utils/langConstant";
 import CloseIcon from "../../icons/CloseIcon";
@@ -23,6 +26,7 @@ const AISearch = ({ onClose }) => {
 
   const handleAiResult = async () => {
     console.log("Button Clicked");
+    dispatch(addSearchedMoviesData(null));
     const userQuery = textAreaRef.current.value;
     const query = `
     Recommend exactly 5 *distinct movies matching this request: "${userQuery}".
@@ -55,8 +59,8 @@ const AISearch = ({ onClose }) => {
         >
           <CloseIcon />
         </button>
-        <div className="flex flex-col justify-start items-center gap-7 ">
-          <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%]">
+        <div className="flex flex-col justify-start items-center gap-7 w-full">
+          <div className="bg-gray-800 rounded-3xl text-white p-2 md:px-4 flex flex-col w-[75%] min-w-0">
             <div className="flex justify-center items-center gap-3">
               <textarea
                 id="aiSearchbar"
