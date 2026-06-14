@@ -75,7 +75,7 @@ const AccountBody = () => {
             </li>
           </ul>
         </div>
-        <div className="w-full m-4 *:md:w-2/3 ">
+        <div className="w-full m-4 md:w-2/3 ">
           <div className="mt-11 md:mt-0">
             {activeOption === "overview" && <OverView />}
             {activeOption === "membership" && <Membership />}
