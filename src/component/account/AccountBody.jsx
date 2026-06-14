@@ -39,8 +39,10 @@ const AccountBody = () => {
           <ArrowLeftIcon />
           <span>{lang[defLang].accountBackButton}</span>
         </div>
+        {isMenuOpen && <div className="absolute inset-0 z-10 bg-black/50"></div>}
+
         <div
-          className={`absolute md:relative w-[60%] h-[90%] p-3 md:w-1/3 md:h-full pt-13 md:pt-0 bg-amber-50 md:bg-white rounded-lg border border-gray-300 ${isMenuOpen ? "block" : "hidden"} md:block`}
+          className={`absolute z-20 md:relative w-[60%] h-[90%] p-3 md:w-1/3 md:h-full pt-13 md:pt-0 bg-amber-50 md:bg-white rounded-lg border border-gray-300 ${isMenuOpen ? "block" : "hidden"} md:block`}
         >
           <ul className="text-gray-500 font-semibold flex flex-col gap-5">
             <li
