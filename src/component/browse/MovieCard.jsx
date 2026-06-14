@@ -16,11 +16,11 @@ const MovieCard = (props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const dispatch = useDispatch();
-  const favMovies = useSelector((store) => store.movies.favouriteMovies);
+  const favMovies = useSelector((store) => store?.movies?.favouriteMovies);
 
-  const favMovieIds = favMovies.map((movie) => movie.id);
+  const favMovieIds = favMovies.map((movie) => movie?.id);
 
-  const isFavMovie = () => favMovieIds.includes(movie.id);
+  const isFavMovie = () => favMovieIds.includes(movie?.id);
 
   const handleFavouriteMovies = () => {
     console.log(movie);
@@ -38,7 +38,7 @@ const MovieCard = (props) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
-          src={`${POSTER_BASE_URL}${movie.poster_path}`}
+          src={`${POSTER_BASE_URL}${movie?.poster_path}`}
           className="w-40 rounded-lg "
         ></img>
         <div
