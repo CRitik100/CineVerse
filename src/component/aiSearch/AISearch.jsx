@@ -45,7 +45,7 @@ const AISearch = ({ onClose }) => {
     // const result = completion.text;
 
     const response = await openAi.responses.create({
-      model: "gpt-5 mini",
+      model: "gpt-5-nano",
       input: refineQuery,
     });
     const result = response.output_text;
