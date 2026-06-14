@@ -9,6 +9,7 @@ import {
 import SearchedMovieContainer from "./searchedMovieContainer";
 import lang from "../../utils/langConstant";
 import CloseIcon from "../../icons/CloseIcon";
+import openAi from "../../utils/ai/openai";
 
 const AISearch = ({ onClose }) => {
   const textAreaRef = useRef(null);
@@ -28,22 +29,29 @@ const AISearch = ({ onClose }) => {
     console.log("Button Clicked");
     dispatch(addSearchedMoviesData(null));
     const userQuery = textAreaRef.current.value;
-    const query = `
+    const refineQuery = `
     Recommend exactly 5 *distinct movies matching this request: "${userQuery}".
 
     Return only a comma-separated list of movie titles.
     No explanations or additional text.
     `;
     console.log("User Query: ", userQuery);
-    console.log("Query: ", query);
+    console.log("Query: ", refineQuery);
 
-    const completion = await gemini.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: query,
+    // const completion = await gemini.models.generateContent({
+    //   model: "gemini-3.5-flash",
+    //   contents: refineQuery,
+    // });
+    // const result = completion.text;
+
+    const response = await openAi.responses.create({
+      model: "gpt-5 mini",
+      input: refineQuery,
     });
-    const searchedMovies = completion.text
-      .split(",")
-      .map((title) => title.trim());
+    const result = response.output_text;
+    console.log(response);
+
+    const searchedMovies = result.split(",").map((title) => title.trim());
     dispatch(addSearchedMovies(searchedMovies));
   };
 
